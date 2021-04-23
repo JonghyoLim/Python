@@ -6,10 +6,15 @@ def first_non_repeating_v1(string):
     for x in string:
         freq[x] = freq.get(x, 0) + 1#return the value for key
 
-    for i in string:
-        if freq[i] == 1:
-            return i
+    # for i in string:
+    #     if freq[i] == 1:
+    #         return i # p
 
+    counter=0
+    for i in range(len(string)):
+        if freq[string[i]] == 1:
+            return string[i], counter #('p', 6)
+        counter+=1
 
 def first_non_repeating_v2(string):
     #netsetosnet
@@ -26,7 +31,7 @@ def first_non_repeating_v2(string):
     counter=0
     for index in range(size):
         if dict[string[index]] == 1:
-            return string[index], counter
+            return string[index], counter #('p', 6)
         counter+=1    
 
 
